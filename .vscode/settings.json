@@ -1,0 +1,7 @@
+{
+	"files.associations": {
+		"*.quest": "lua",
+		"main.h": "c",
+		"stdio.h": "c"
+	}
+}
