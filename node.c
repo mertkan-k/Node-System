@@ -45,11 +45,7 @@ void NodePush(NodeP headNode, NodeValue value){
 	NodeExpand(headNode)->value = value;
 }
 
-/**
- * Indexleme 0 dan baslar ama 0 in degeri verilmiyor!
- * Indexe kadar gidemezse sonuncuyu basar.
- */
-NodeValue NodeGetValueByIndex(NodeP headNode, size_t index){
+NodeP NodeGetByIndex(NodeP headNode, size_t index){
 	size_t i = 0;
 
 	while (headNode->next != NULL){
@@ -59,7 +55,15 @@ NodeValue NodeGetValueByIndex(NodeP headNode, size_t index){
 		headNode = headNode->next;
 	}
 
-	return headNode->value;
+	return headNode;
+}
+
+/**
+ * Indexleme 0 dan baslar ama 0 in degeri verilmiyor!
+ * Indexe kadar gidemezse sonuncuyu basar.
+ */
+NodeValue NodeGetValueByIndex(NodeP headNode, size_t index){
+	return NodeGetByIndex(headNode, index)->value;
 }
 
 /**

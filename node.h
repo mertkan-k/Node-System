@@ -22,6 +22,7 @@ NodeP NodeCreateWithValue(NodeValue value);
 NodeP NodeGetLast(NodeP headNode);
 NodeP NodeExpand(NodeP headNode);
 void NodePush(NodeP headNode, NodeValue value);
+NodeP NodeGetByIndex(NodeP headNode, size_t index);
 NodeValue NodeGetValueByIndex(NodeP headNode, size_t index);
 size_t NodeGetSize(NodeP headNode);
 bool NodeIsIn(NodeP headNode, NodeValue value);
