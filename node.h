@@ -23,7 +23,7 @@ NodeP NodeGetLast(NodeP headNode);
 NodeP NodeExpand(NodeP headNode);
 NodeP NodeExpandFront(NodeP *headNode);
 void NodePush(NodeP headNode, NodeValue value);
-void NodePushFront(NodeP *headNode, NodeValue value);
+void NodePushFront(NodeP headNode, NodeValue value);
 NodeP NodeGetByIndex(NodeP headNode, size_t index);
 NodeValue NodeGetValueByIndex(NodeP headNode, size_t index);
 size_t NodeGetSize(NodeP headNode);
