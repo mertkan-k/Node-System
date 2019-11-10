@@ -38,11 +38,24 @@ NodeP NodeExpand(NodeP headNode){
 	return (NodeGetLast(headNode)->next = NodeCreate());
 }
 
+NodeP NodeExpandFront(NodeP *headNode){
+	NodeP expandedNode = NodeCreate();
+
+	expandedNode->next = *headNode;
+	*headNode = expandedNode;
+
+	return expandedNode;
+}
+
 /**
  * Genisletiyor ve degeri atiyor.
  */
 void NodePush(NodeP headNode, NodeValue value){
 	NodeExpand(headNode)->value = value;
+}
+
+void NodePushFront(NodeP *headNode, NodeValue value){
+	NodeExpandFront(headNode)->next->value = value;
 }
 
 NodeP NodeGetByIndex(NodeP headNode, size_t index){
@@ -142,3 +155,5 @@ void NodeConnect(NodeP fNode, NodeP sNode){
 	NodeGetLast(fNode)->next = sNode->next;
 	free(sNode);
 }
+
+

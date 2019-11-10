@@ -7,6 +7,7 @@ int main(int argc, char const *argv[]) {
 	NodePush(headNode, 5);
 	NodePush(headNode, 15);
 	NodePush(headNode, 25);
+	NodePushFront(&headNode, 1);
 	printf("Node Size: %d\n", NodeGetSize(headNode));
 	printf("Node 0 Value: %d\n", NodeGetValueByIndex(headNode, 0));
 	printf("Node 1 Value: %d\n", NodeGetValueByIndex(headNode, 1));
