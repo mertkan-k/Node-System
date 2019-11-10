@@ -22,10 +22,13 @@ int main(int argc, char const *argv[]) {
 	printf("15 Is Removed From Node: %d\n", NodeRemoveByValue(headNode, 15));
 	printf("15 Is In Node: %d\n", NodeIsIn(headNode, 15));
 	printf("Node Size: %d\n", NodeGetSize(headNode));
-	printf("25 Is In Node: %d\n", NodeIsIn(headNode, 25));
-	printf("25 Is Removed From Node: %d\n", NodeRemoveByValue(headNode, 25));
+
+	NodeP headNode2 = NodeCreate();
+	NodePush(headNode2, 5);
+	NodeConnect(headNode, headNode2);
 	printf("Node Size: %d\n", NodeGetSize(headNode));
-	NodeClear(headNode);
+
+	// NodeClear(headNode);
 
 	return 0;
 }

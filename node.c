@@ -138,4 +138,7 @@ void NodeMakeRecursive(NodeP headNode){
 	NodeGetLast(headNode)->next == headNode;
 }
 
-
+void NodeConnect(NodeP fNode, NodeP sNode){
+	NodeGetLast(fNode)->next = sNode->next;
+	free(sNode);
+}

@@ -30,5 +30,6 @@ NodeP NodeFindByValue(NodeP headNode, NodeValue value);
 void NodeClear(NodeP headNode);
 bool NodeRemoveByValue(NodeP headNode, NodeValue value);
 void NodeMakeRecursive(NodeP headNode);
+void NodeConnect(NodeP fNode, NodeP sNode);
 
 #endif
