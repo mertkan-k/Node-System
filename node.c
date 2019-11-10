@@ -104,3 +104,25 @@ void NodeClear(NodeP headNode){
 		free(deletingNode);
 	}
 }
+
+/**
+ * Gelenden itibaren baslar.
+ */
+bool NodeRemoveByValue(NodeP headNode, NodeValue value){
+	NodeP prevNode = NULL;
+
+	while (headNode != NULL)
+	{
+		if (headNode->value == value){
+			prevNode->next = headNode->next;
+			free(headNode);
+
+			return true;
+		}
+
+		prevNode = headNode;
+		headNode = headNode->next;
+	}
+
+	return false;
+}
