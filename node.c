@@ -130,3 +130,12 @@ bool NodeRemoveByValue(NodeP headNode, NodeValue value){
 
 	return false;
 }
+
+void NodeMakeRecursive(NodeP headNode){
+	if (headNode->next == NULL)
+		return;
+
+	NodeGetLast(headNode)->next == headNode;
+}
+
+

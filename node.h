@@ -29,5 +29,6 @@ bool NodeIsIn(NodeP headNode, NodeValue value);
 NodeP NodeFindByValue(NodeP headNode, NodeValue value);
 void NodeClear(NodeP headNode);
 bool NodeRemoveByValue(NodeP headNode, NodeValue value);
+void NodeMakeRecursive(NodeP headNode);
 
 #endif
