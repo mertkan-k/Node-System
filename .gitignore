@@ -39,3 +39,4 @@ Thumbs.db
 
 #
 .vscode
+*.code-workspace
