@@ -135,7 +135,7 @@ void NodeMakeRecursive(NodeP headNode){
 	if (headNode->next == NULL)
 		return;
 
-	NodeGetLast(headNode)->next == headNode;
+	NodeGetLast(headNode)->next = headNode;
 }
 
 void NodeConnect(NodeP fNode, NodeP sNode){
