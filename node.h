@@ -17,6 +17,7 @@ typedef struct Node *NodeP;
  * HeadNode nin degeri ozellikle verilmediyse bos tutuluyor.
  */
 
+void NodePrint(NodeP headNode);
 NodeP NodeCreate();
 NodeP NodeCreateWithValue(NodeValue value);
 NodeP NodeGetLast(NodeP headNode);
@@ -33,5 +34,6 @@ void NodeClear(NodeP headNode);
 bool NodeRemoveByValue(NodeP headNode, NodeValue value);
 void NodeMakeRecursive(NodeP headNode);
 void NodeConnect(NodeP fNode, NodeP sNode);
+void NodeMakeReverse(NodeP headNode);
 
 #endif

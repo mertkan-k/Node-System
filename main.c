@@ -9,10 +9,9 @@ int main(int argc, char const *argv[]) {
 	NodePush(headNode, 25);
 	NodePushFront(headNode, 1);
 	printf("Node Size: %d\n", NodeGetSize(headNode));
-	printf("Node 0 Value: %d\n", NodeGetValueByIndex(headNode, 0));
-	printf("Node 1 Value: %d\n", NodeGetValueByIndex(headNode, 1));
-	printf("Node 2 Value: %d\n", NodeGetValueByIndex(headNode, 2));
-	printf("Node 3 Value: %d\n", NodeGetValueByIndex(headNode, 3));
+	NodePrint(headNode);
+	NodeMakeReverse(headNode);
+	NodePrint(headNode);
 	printf("Node Last Value: %d\n", NodeGetLast(headNode)->value);
 	printf("15 Is In Node: %d\n", NodeIsIn(headNode, 15));
 	printf("25 Is In Node: %d\n", NodeIsIn(headNode, 25));
@@ -29,7 +28,7 @@ int main(int argc, char const *argv[]) {
 	NodeConnect(headNode, headNode2);
 	printf("Node Size: %d\n", NodeGetSize(headNode));
 
-	// NodeClear(headNode);
+	NodeClear(headNode);
 
 	return 0;
 }

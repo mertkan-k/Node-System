@@ -1,5 +1,14 @@
 #include "node.h"
 
+void NodePrint(NodeP headNode){
+	while (headNode != NULL)
+	{
+		printf("%d, ", headNode->value);
+		headNode = headNode->next;
+	}
+	printf("\n");
+}
+
 /**
  * Sadece bellekten yer ayarliyor.
  */
@@ -164,4 +173,23 @@ void NodeConnect(NodeP fNode, NodeP sNode){
 	free(sNode);
 }
 
+/**
+ * Take a coffee before look
+ */
+void NodeMakeReverse(NodeP headNode){
+	NodeP prevNode = NULL;
+	NodeP tempNode = headNode->next;
+	NodeP nextNode;
+
+	while (tempNode != NULL)
+	{
+		nextNode = tempNode->next;
+		tempNode->next = prevNode;
+
+		prevNode = tempNode;
+		tempNode = nextNode;
+	}
+
+	headNode->next = prevNode;
+}
 
