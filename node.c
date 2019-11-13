@@ -41,7 +41,7 @@ NodeP NodeGetLast(NodeP headNode){
 }
 
 /**
- * Bellekten yer ayarlayip gelen node'ye ekliyor.
+ * Bellekten yer ayarlayip gelen node'ye ekler ve yeni nodenin p sini dondurur.
  */
 NodeP NodeExpand(NodeP headNode){
 	return (NodeGetLast(headNode)->next = NodeCreate());
@@ -75,6 +75,10 @@ void NodePushFront(NodeP headNode, NodeValue value){
 	headNode->next = expandedNode;
 }
 
+/**
+ * Indexleme 0 dan baslar ama 0 in degeri verilmiyor!
+ * Indexe kadar gidemezse sonuncuyu basar.
+ */
 NodeP NodeGetByIndex(NodeP headNode, size_t index){
 	size_t i = 0;
 
@@ -88,10 +92,6 @@ NodeP NodeGetByIndex(NodeP headNode, size_t index){
 	return headNode;
 }
 
-/**
- * Indexleme 0 dan baslar ama 0 in degeri verilmiyor!
- * Indexe kadar gidemezse sonuncuyu basar.
- */
 NodeValue NodeGetValueByIndex(NodeP headNode, size_t index){
 	return NodeGetByIndex(headNode, index)->value;
 }
@@ -161,11 +161,16 @@ bool NodeRemoveByValue(NodeP headNode, NodeValue value){
 	return false;
 }
 
+/**
+ *         (node)<-(node)<-(node)
+ *            |              |
+ * (head)->(node)->(node)->(node)
+ */
 void NodeMakeRecursive(NodeP headNode){
 	if (headNode->next == NULL)
 		return;
 
-	NodeGetLast(headNode)->next = headNode;
+	NodeGetLast(headNode)->next = headNode->next;
 }
 
 void NodeConnect(NodeP fNode, NodeP sNode){
